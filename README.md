@@ -1,7 +1,7 @@
 chatter-in-apex-video
 =====================
 
-This repo contains the source files for the video tutorial "Displaying Two Chatter Feeds on a Visualforce Page."
+This repo contains the source files for the video tutorial "Using Chatter in Apex to Display Two Chatter Feeds on a Visualforce Page."
 
 <http://youtu.be/lKhFaYcBZcU>
 
