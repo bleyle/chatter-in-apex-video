@@ -1,0 +1,29 @@
+<apex:component controller="SimpleFeedController">
+
+    <apex:form >
+        <apex:selectList value="{!communityId}" size="1">
+            <apex:selectOptions value="{!communityOptions}"/>
+            <apex:actionSupport event="onchange" rerender="feed"/>
+        </apex:selectList>
+    </apex:form>
+    
+    <apex:outputPanel id="feed">
+        <apex:repeat value="{!newsFeedItems}" var="feedItem">
+          <div>
+            <apex:image style="margin:4px" width="25" url="{!feedItem.photoUrl}"/><br/>
+            User: <b>{!feedItem.actor.name}</b><br/>
+            Text: <b>{!feedItem.body.text}</b><br/>
+            
+            <apex:outputPanel >
+              <apex:repeat value="{!feedItem.comments.comments}" var="comment">
+                 <div style="margin-left:25px">
+                   <apex:image style="margin:4px" width="25" url="{!comment.user.photo.smallPhotoUrl}"/><br/>
+                   User: <b>{!comment.user.name}</b><br/>
+                   Text: <b>{!comment.body.text}</b>
+                 </div>
+              </apex:repeat>
+            </apex:outputPanel>
+          </div>
+        </apex:repeat>
+    </apex:outputPanel>
+</apex:component>
